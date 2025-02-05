@@ -1,0 +1,119 @@
+/* General Page Styling */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+    background-color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    color: #333;
+}
+
+/* Header Styling */
+h1, h2 {
+    color: #ff3366;
+    margin-bottom: 10px;
+}
+
+/* Icon Container Layout */
+.icon-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    justify-items: center;
+    align-items: center;
+    padding: 10px;
+}
+
+/* Base SVG Styles */
+svg {
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    transition: transform 0.4s ease, filter 0.4s ease, fill 0.4s ease;
+    transform-origin: center;
+}
+
+/* Adjust Specific Icon Scaling for Balance */
+#strawberrytotal { transform: scale(1.7); }
+#mangototal { transform: scale(1.5); }
+#peartotal { transform: scale(1.1); }
+#peachtotal { transform: scale(0.95); }
+#bananatotal { transform: scale(1.3); }
+#appletotal { transform: scale(0.75); }
+
+/* General Hover Effect */
+svg:hover {
+    opacity: 0.95;
+}
+
+/* Strawberry - (Spin) */
+#strawberrytotal:hover {
+    transform: rotate(180deg);
+    transition: transform 1.5s linear;
+}
+
+/* Mango - (Color Change) */
+#mangototal:hover {
+    filter: hue-rotate(180deg);
+    transition: filter 0.5s ease-in-out;
+}
+
+/* Pear - (Tilt/Skew) */
+#peartotal:hover {
+    transform: skewX(20deg) skewY(10deg);
+    transition: transform 0.4s ease;
+}
+
+/* Peach - (Subtle Shake) */
+#peachtotal:hover {
+    animation: shake 0.3s ease-in-out infinite alternate;
+}
+@keyframes shake {
+    from { transform: translateX(-5px) rotate(-4deg); }
+    to { transform: translateX(5px) rotate(4deg); }
+}
+
+/* Banana - (Bounce Up & Down) */
+#bananatotal:hover {
+    animation: bounce 0.6s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    }
+
+/* Apple - (Smooth Zoom) */
+#appletotal:hover {
+    transform: scale(1.3); 
+    transition: transform 0.4s ease-in-out;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .icon-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    svg {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .icon-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+}
